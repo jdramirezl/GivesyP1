@@ -1,12 +1,18 @@
 from django.urls import path, include
+from rest_framework import routers
+from .views import (UserView, ProductoView, CategoriaView, ImagenView, OrdenView)
 from . import views
-from producto import urls as producto_urls
+
+router = routers.DefaultRouter()
+router.register('user', UserView, 'city')
+router.register('producto', ProductoView, 'city')
+router.register('categoria', CategoriaView, 'city')
+router.register('imagen', ImagenView, 'city')
+router.register('orden', OrdenView, 'city')
+
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('<slug:slug>/filtro', views.filtrar, name='filtrar'),
-    path('<slug:slug>/buscar', views.buscar, name='buscar'),
-    path('<slug:slug>/detail', views.detail, name='detallar'),
-    path('profile/<int:user_id>', views.detail, name='perfil'),
-    path('producto/', include(producto_urls)),
+    
 ]
+
+urlpatterns += router.urls

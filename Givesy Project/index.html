@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Givesy | Donaciones</title>
+
+  
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="mySlides">
+        <img src="images/image-product-1.jpg">
+      </div>
+
+      <div class="mySlides">
+        <img src="images/image-product-2.jpg">
+      </div>
+
+      <div class="mySlides">
+        <img src="images/image-product-3.jpg">
+      </div>
+
+      <div class="mySlides">
+        <img src="images/image-product-4.jpg">
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <div class="thumbnails cursor">
+      <img src="images/image-product-1-thumbnail.jpg" alt="" class="active" onclick="openModal();currentSlide(1)">
+      <img src="images/image-product-2-thumbnail.jpg" alt="" onclick="openModal();currentSlide(2)">
+      <img src="images/image-product-3-thumbnail.jpg" alt="" onclick="openModal();currentSlide(3)">
+      <img src="images/image-product-4-thumbnail.jpg" alt="" onclick="openModal();currentSlide(4)">
+    </div>
+  </div>
+
+  <div class="cart">
+    <!--
+      <h3>Cart</h3>
+    <p id ="empty">Your cart is empty.</p>-->
+    <!--<div class="item">
+      <img src="images/image-product-1-thumbnail.jpg" alt="" style="height: 60px;">
+      <p>Fall Limited Edition Sneakers $125 x 3 <strong>$375.00</strong></p>
+      <img src="images/icon-delete.svg" alt="">
+    </div>
+    <button>Checkout</button>
+    -->
+
+  </div>
+
+  <nav>
+    <div id="nav-left">
+      <img src="images/icon-menu.svg" alt="" id="menu" onclick="showSideBar();">
+      <span id="logo">
+        <img src="images/Logo Givesy.jpg" alt="">
+      </span>
+      <span id="ulspan" class="">
+        <img src="images/icon-close.svg" alt="" onclick="closeSlideBar();" class="cursor">
+        
+      </span>
+    </div>
+    <div id="nav-right">
+      
+      
+      <img src="images/image-avatar.png" alt="" id="img-hero" class="cursor">
+    </div>
+  </nav>
+
+
+  <main>
+    <div class="imgs-col">
+      <div class="main-img">
+        <a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
+        <div class="mySlides2">
+          <img src="images/image-product-1.jpg">
+        </div>
+
+        <div class="mySlides2">
+          <img src="images/image-product-2.jpg">
+        </div>
+
+        <div class="mySlides2">
+          <img src="images/image-product-3.jpg">
+        </div>
+
+        <div class="mySlides2">
+          <img src="images/image-product-4.jpg">
+        </div>
+
+        <a class="next2" onclick="plusSlides2(1)">&#10095;</a>
+      </div>
+
+      <div class="thumbnails cursor">
+        <img src="images/image-product-1-thumbnail.jpg" alt="" class="active" onclick="openModal();currentSlide(1)">
+        <img src="images/image-product-2-thumbnail.jpg" alt="" onclick="openModal();currentSlide(2)">
+        <img src="images/image-product-3-thumbnail.jpg" alt="" onclick="openModal();currentSlide(3)">
+        <img src="images/image-product-4-thumbnail.jpg" alt="" onclick="openModal();currentSlide(4)">
+      </div>
+    </div>
+
+    <div class="text-col">
+      <span id="highlight">Will Smith</span>
+      <h1 id="name">Tenis Talla 38</h1>
+      <p >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Maecenas elit dui, dictum id lorem quis, consectetur ultricies tellus. 
+        Donec a leo facilisis, varius lacus non, feugiat lacus. 
+      </p>
+      <span id="price">
+        <h2><span id="amount">Donación</span></h2>
+        
+      </span>
+
+      
+      <div class="options">
+        <button id="addToCart" onclick="addItem();"><img src="" alt=""> Contactar al ofertante</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

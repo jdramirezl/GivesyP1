@@ -18,7 +18,7 @@ export default function App() {
 
   return (
       <ChakraProvider>
-        <Navbar></Navbar>
+        <Navbar/>
         <Productos>
           {data?.map((producto: ProductoModel) => (
             <Producto producto={producto} />

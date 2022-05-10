@@ -8,10 +8,10 @@ class OrdenSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ImagenSerializer(serializers.ModelSerializer):
-
+    imagen = serializers.ImageField(max_length=None, allow_empty_file=False, allow_null=False, use_url=True, required=False)
     class Meta:
         model = Imagen
-        fields = '__all__'
+        fields = ('id', 'imagen', 'producto')
 
 class CategoriaSerializer(serializers.ModelSerializer):
 

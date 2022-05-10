@@ -39,7 +39,7 @@ class ImagenView(viewsets.ModelViewSet):
     serializer_class = ImagenSerializer
     filter_backends = [DjangoFilterBackend]
     
-    filterset_fields = '__all__'
+    filterset_fields = ('id', 'producto')
     def get_queryset(self):
         queryset = Imagen.objects.all()
         return queryset

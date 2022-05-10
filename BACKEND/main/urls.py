@@ -11,8 +11,6 @@ router.register('imagen', ImagenView, 'city')
 router.register('orden', OrdenView, 'city')
 
 
-urlpatterns = [
-    
-]
+urlpatterns = []
 
 urlpatterns += router.urls

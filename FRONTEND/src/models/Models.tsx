@@ -10,3 +10,16 @@ export interface ProductoModel {
     actualizado: string;
     estado: string;
 }
+
+export interface ImagenModel {
+    id: number;
+    imagen: string;
+    producto: number;
+}
+
+export interface UserModel {
+    id: number;
+    first_name: string;
+    last_name: string;
+    role: string;
+}

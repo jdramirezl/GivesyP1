@@ -1,31 +1,28 @@
 import * as React from "react";
-import { ChakraProvider} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import { Productos } from "./components/product/Productos";
 import { Producto } from "./components/product/Producto";
-import { ProductoModel } from "./models/ProductoModel";
-import { baseURL } from "./config";
-import axios from "axios";
-import { useQuery } from "react-query";
+import { ProductoModel, ImagenModel } from "./models/Models";
+import { FetchAll } from "./utils/RestFactory";
 
 export default function App() {
-  const fetchProductos = async () => {
-    const res = await axios.get<ProductoModel[]>(`${baseURL}api/producto/`);
-    return res.data;
-  };
-
-  const { data } = useQuery("producto", fetchProductos);
+  const productos = FetchAll<ProductoModel>("producto");
+  const imagenes = FetchAll<ImagenModel>("imagen");
 
   return (
-      <ChakraProvider>
-        <Navbar/>
-        <Productos>
-          {data?.map((producto: ProductoModel) => (
-            <Producto producto={producto} />
-          ))}
-        </Productos>
-      </ChakraProvider>
+    <ChakraProvider>
+      <Navbar />
+      <Productos>
+        {productos?.map((prod: ProductoModel) => (
+          <Producto
+            producto={prod}
+            imagenes={
+              imagenes?.filter((img) => prod.id == img.producto) || []
+            }
+          />
+        ))}
+      </Productos>
+    </ChakraProvider>
   );
 }
-
-

@@ -8,18 +8,20 @@ import {
     Image,
     StackProps,
 } from '@chakra-ui/react';
-import {ProductoModel} from '../../models/ProductoModel';
-
-const IMAGE =
-    'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
+import { FetchAll } from '../../utils/RestFactory'
+import {ProductoModel, ImagenModel, UserModel} from '../../models/Models';
 
 interface Props {
     producto: ProductoModel
     rootProps?: StackProps
+    imagenes: ImagenModel[]
 }
 
 export const Producto = (props: Props) => {
-    const { producto, rootProps } = props
+    const { producto, rootProps, imagenes } = props;
+    const users = FetchAll<UserModel>('user')
+    const seller = users?.filter(u => u.id == producto.vendedor)[0];
+    
     return (
         <Center py={12}>
         <Box
@@ -45,7 +47,6 @@ export const Producto = (props: Props) => {
                 pos: 'absolute',
                 top: 5,
                 left: 0,
-                backgroundImage: `url(${IMAGE})`,
                 filter: 'blur(15px)',
                 zIndex: -1,
             }}
@@ -59,12 +60,12 @@ export const Producto = (props: Props) => {
                 height={230}
                 width={282}
                 objectFit={'cover'}
-                src={IMAGE}
+                src={imagenes[0]?.imagen}
             />
             </Box>
             <Stack pt={10} align={'center'}>
             <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
-                {producto.vendedor}
+                {seller?.first_name + " " + seller?.last_name}
             </Text>
             <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
                 {producto.titulo}

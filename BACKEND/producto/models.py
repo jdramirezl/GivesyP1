@@ -13,7 +13,7 @@ class Producto(models.Model):
     descripcion = models.TextField(blank=False, null=False)
     categoria = models.ForeignKey("main.Categoria", on_delete=models.CASCADE)
     vendedor = models.ForeignKey("accounts.User", on_delete=models.CASCADE)
-    destacado = models.BooleanField()
+    destacado = models.BooleanField(default=True)
     creado = models.DateTimeField(auto_now_add=True)
     actualizado = models.DateTimeField(auto_now=True)
     estado = models.CharField(choices=Estados.choices, default=Estados.activo, max_length=20)

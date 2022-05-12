@@ -21,5 +21,9 @@ export interface UserModel {
     id: number;
     first_name: string;
     last_name: string;
-    role: string;
+}
+
+export interface CategoriaModel {
+    id: number;
+    nombre: string;
 }

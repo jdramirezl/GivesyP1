@@ -1,7 +1,5 @@
-import * as React from "react";
 import { baseURL } from "../config";
 import axios from "axios";
-import { useQuery } from "react-query";
 
 export async function Create<T extends { id?: number }>(
 	name: string,

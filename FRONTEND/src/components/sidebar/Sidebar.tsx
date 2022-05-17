@@ -114,7 +114,7 @@ export default function Sidebar(props: Props) {
 									<Text fontWeight="bold" fontSize="4xl">
 										Filtrar
 									</Text>
-									<Box width="90z%" mt={5}>
+									<Box width="90%" mt={5}>
 										<FormLabel htmlFor="categoria">
 											Categoria
 										</FormLabel>

@@ -6,21 +6,15 @@ import {
 	ModalHeader,
 	ModalFooter,
 	ModalBody,
-	ModalCloseButton,
 	Button,
-	ButtonGroup,
 	Flex,
-	Spacer,
 	useDisclosure,
 	FormControl,
 	FormLabel,
-	FormErrorMessage,
-	FormHelperText,
 	Input,
 	Select,
 	Textarea,
 	Text,
-	Image,
 	VStack,
 	Box
 } from "@chakra-ui/react";
@@ -34,7 +28,6 @@ import {
 import {
 	FetchAll,
 	Create,
-	Fetch,
 	Update,
 	Delete
 } from "../../utils/RestFactory";
@@ -70,7 +63,7 @@ export const ProductoModal = (pmprops: ProdModProps) => {
 			setCategorias(cats?.data);
 		}
 		getData();
-	}, []);
+	}, [producto?.id]);
 
 	// Body
 	let navigate = useNavigate();

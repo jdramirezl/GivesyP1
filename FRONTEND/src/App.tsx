@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import {
 	ChakraProvider,
-	Button,
-	ButtonGroup,
 	Flex,
-	Spacer,
 	Box
 } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
@@ -13,7 +10,6 @@ import { Productos } from "./components/product/Productos";
 import { Producto } from "./components/product/Producto";
 import { ProductoModel, ImagenModel, UserModel } from "./models/Models";
 import { FetchAll } from "./utils/RestFactory";
-import { ProductoModal } from "./components/product/ProductoModal";
 
 export default function App() {
 	const [productos, setProductos] = useState<ProductoModel[] | null>(null);
@@ -53,7 +49,7 @@ export default function App() {
 								producto={prod}
 								imagenes={
 									imagenes?.filter(
-										(img) => prod.id == img.producto
+										(img) => prod.id === img.producto
 									) || []
 								}
 							/>

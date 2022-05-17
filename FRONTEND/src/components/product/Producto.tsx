@@ -21,7 +21,7 @@ interface Props {
 }
 
 export const Producto = (props: Props) => {
-	const { producto, rootProps, imagenes } = props;
+	const { producto, imagenes } = props;
 	const [redirect, setRedirect] = useState(false);
 	const [seller, setSeller] = useState<UserModel | null>(null);
 
@@ -31,7 +31,7 @@ export const Producto = (props: Props) => {
 			setSeller(res.data);
 		}
 		getData();
-	}, []);
+	}, [producto.vendedor]);
 
 	return (
 		<Center py={12}>

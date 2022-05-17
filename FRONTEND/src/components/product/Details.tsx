@@ -2,20 +2,10 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {
 	Box,
-	Container,
-	Stack,
 	Text,
-	Image,
 	Flex,
 	VStack,
 	Button,
-	Heading,
-	SimpleGrid,
-	StackDivider,
-	useColorModeValue,
-	VisuallyHidden,
-	List,
-	ListItem,
 	Center
 } from "@chakra-ui/react";
 import { FetchAll, Fetch } from "../../utils/RestFactory";
@@ -48,7 +38,7 @@ export default function ProductoDetail() {
 
 		const prodId = params.prodId;
 		getData(prodId ?? "0");
-	}, []);
+	}, [params.prodId, producto?.vendedor]);
 
 	return (
 		<>

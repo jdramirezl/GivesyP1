@@ -1,14 +1,9 @@
 import {
 	Box,
 	Center,
-	useColorModeValue,
-	Heading,
-	Text,
-	Stack,
 	Image,
 	StackProps,
 	Flex,
-	CloseButton
 } from "@chakra-ui/react";
 import { DeleteIcon } from "@chakra-ui/icons";
 import { IconButton } from "@chakra-ui/react";

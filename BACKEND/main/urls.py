@@ -4,11 +4,11 @@ from .views import (UserView, ProductoView, CategoriaView, ImagenView, OrdenView
 from . import views
 
 router = routers.DefaultRouter()
-router.register('user', UserView, 'city')
-router.register('producto', ProductoView, 'city')
-router.register('categoria', CategoriaView, 'city')
-router.register('imagen', ImagenView, 'city')
-router.register('orden', OrdenView, 'city')
+router.register('user', UserView, 'user')
+router.register('producto', ProductoView, 'producto')
+router.register('categoria', CategoriaView, 'categoria')
+router.register('imagen', ImagenView, 'imagen')
+router.register('orden', OrdenView, 'orden')
 
 
 urlpatterns = []
